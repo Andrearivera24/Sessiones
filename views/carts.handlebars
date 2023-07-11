@@ -1,0 +1,28 @@
+
+<div class="bannerTitle"> 
+	<h1>Detalles del carrito actual</h1>
+</div>
+
+<div class='container' id="cartsDetail">
+	<div class='row'>
+		{{#if cart}}
+			{{#each cart.products}}
+			<div class="card" style="width: 18rem;">
+				<img src={{this.product.thumbnail}} class="card-img-top" alt="{{this.product.thumbnail}}">
+				<div class="card-body">
+					<h4 class="card-title">{{this.product.title}}</h4>
+					<p class="card-text">Description: {{this.product.description}}</p>
+					<p class="card-text">Level: {{this.product.category}}</p>
+					<h6 class="card-text">$USD {{this.product.price}}</h6>
+					<p class="card-text">Quantity: {{this.quantity}}</p>
+
+				</div>
+			</div>
+			{{/each}}
+			{{else}}
+					<div class="card-body">
+					<h4 class="card-title">No se encontraron los productos del carrito</h4>
+				</div>
+			{{/if}}
+	</div>	
+</div> 

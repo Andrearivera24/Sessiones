@@ -1,0 +1,90 @@
+#body {
+    background-color: #ddfdd2;
+}
+
+.bannerTitle{
+    padding-top: 25px;
+    color: #5015bd;
+    font-family: 'Comic Neue', cursive !important;
+    text-align: center;
+}
+#cartsDetail{
+    margin-top: 50px;
+    padding: 8px;
+}
+#products {
+    margin-top: 50px;
+    padding: 8px;
+}
+
+.card {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    margin-top: 20px;
+    
+
+}
+
+.card h4 {
+    font-family: 'Comic Neue', cursive !important;
+    color: #260d55;
+}
+
+.card h6 {
+    font-family: 'Comic Neue', cursive !important;
+    color: #05350f;
+}
+
+.card-body .btn {
+    background-color: #5015bd;
+    color: #ddfdd2;
+    margin-left: 70px;
+
+}
+
+.card-body .btn:hover {
+    background-color: #ddfdd2;
+    color: #5015bd; 
+   
+}
+
+section {
+	margin: 100px;
+}
+
+.bg-light {
+	background: #fff;
+	box-shadow: var(--shadow);
+}
+
+.login-section {
+	margin: 50px 20px;
+	border-radius: var(--radius);
+}
+
+.navbar {
+	margin: 10px;
+	border-radius: var(--radius);
+}
+
+.form-control {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: var(--radius);
+	border: 0px;
+	border-bottom: 1px solid var(--p-color);
+}
+
+.btn-primary {
+	background: var(--gradient);
+	border-radius: var(--radius);
+	border: 0;
+}
+
+.btn-outline-danger {
+	border-radius: var(--radius);
+}
+

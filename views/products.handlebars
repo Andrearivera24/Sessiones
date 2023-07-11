@@ -1,0 +1,73 @@
+<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+	<div class='container-fluid'>
+		<a class='navbar-brand' href='#'>Hola {{user.first_name}} {{user.last_name}}</a>
+		<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
+			aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+			<span class='navbar-toggler-icon'></span>
+		</button>
+		<div class='collapse navbar-collapse' id='navbarSupportedContent'>
+			<ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+				{{#if user}}
+				<li class='nav-item'>
+					<a class='nav-link active' aria-current='page' href='#'>
+						<img src='{{user.img}}' class='img-fluid' style='border-radius: 50%; max-height: 30px;' />
+					</a>
+				</li>
+				<li class='nav-item'>
+					<form action='/api/users/logout' method='post'>
+						<button class='btn btn-outline-danger' type='submit'>
+							Cerrar Sesión
+						</button>
+					</form>
+				</li>
+				{{/if}}
+			</ul>
+
+		</div>
+	</div>
+</nav>
+
+
+
+<div class="bannerTitle">
+	<h1>Lista de productos</h1>
+</div>
+
+<div class='container' id="products">
+	<div class='row'>
+		{{#each docs}}
+		<div class="card" style="width: 18rem;">
+			<img src="{{this.thumbnail}}" class="card-img-top" alt="ruta de imagen">
+			<div class="card-body">
+				<h4 class="card-title">{{this.title}}</h4>
+				<p class="card-text">{{this.description}}</p>
+				<p class="card-text">Level: {{this.category}}</p>
+				<p class="card-text">Stock: {{this.stock}}</p>
+				<h6 class="card-text">$USD {{this.price}}</h6>
+
+				<button class="btn">Agregar</button>
+			</div>
+		</div>
+		{{/each}}
+
+	</div>
+	<div class='row'>
+		<nav aria-label="...">
+			<ul class="pagination">
+				{{#if hasPrevPage}}<li class="page-item"> {{else}}
+				<li class="page-item disabled"> {{/if}}
+					<a class="page-link" href="?limit={{limit}}&page={{prevPage}}">Previus</a>
+				</li>
+				<li class="page-item active" aria-current="page">
+					<span class="page-link">{{page}}</span>
+				</li>
+				{{#if hasNextPage}}<li class="page-item"> {{else}}
+				<li class="page-item disabled"> {{/if}}
+					<a class="page-link" href="?limit={{limit}}&page={{nextPage}}">Next</a>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
+
+</div>
